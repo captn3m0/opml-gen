@@ -8,4 +8,4 @@ RUN apk add --no-cache build-base
 RUN bundle install
 COPY . /app
 
-ENTRYPOINT ["bundle exec rackup"]
+ENTRYPOINT ["/usr/local/bin/bundle", "exec", "rackup", "-E", "production", "-p", "80"]
