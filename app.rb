@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'dotenv/load'
+require 'dotenv'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'octokit'
@@ -13,7 +13,9 @@ class MyApp < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     also_reload 'opml.rb'
+    Dotenv.load
   end
+
   configure do
     set :r, Redis.new
     set :client, Octokit::Client.new(
@@ -44,12 +46,26 @@ class MyApp < Sinatra::Base
     [repos, time]
   end
 
+  get '/' do
+    File.read File.join 'public', 'index.html'
+  end
+
+  post '/submit/:type' do
+    if params[:type] == 'github'
+      username = params[:username]
+      redirect "/github/#{username}/starred.opml"
+    else
+      "Invalid Type"
+    end
+  end
+
   get '/github/:user/starred.opml' do
     user = params[:user]
     repos, time = get_starred_repos_from_cache(user)
     opml = OPML.new do
       @title = "Releases: #{user}/starred"
-      @date_created = Time.new(time.to_i).rfc822
+      # TODO: Fix this
+      @date_created = Time.now.rfc822
       @date_modified = Time.now.rfc822
       @owner_name = user
     end
