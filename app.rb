@@ -17,7 +17,7 @@ class MyApp < Sinatra::Base
   end
 
   configure do
-    set :r, Redis.new
+    set :r, Redis.new(url: ENV.fetch('REDIS_URL'))
     set :client, Octokit::Client.new(
       client_id: ENV.fetch('GITHUB_CLIENT_ID'),
       client_secret: ENV.fetch('GITHUB_CLIENT_SECRET'),
@@ -70,7 +70,7 @@ class MyApp < Sinatra::Base
       @owner_name = user
     end
     repos.each do |r|
-      title = "Release notes from #{r}"
+      title = "#{r} Release Notes"
       html_url = "https://github.com/#{r}/releases"
       rss_url  = "#{html_url}.atom"
       opml.add_outline(
