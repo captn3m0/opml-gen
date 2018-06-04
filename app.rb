@@ -43,6 +43,8 @@ class MyApp < Sinatra::Base
     time = Time.now.to_i
     settings.r.set "#{user}.repos", repos
     settings.r.set "#{user}.repos.time", time
+    # Keep the starred repo list for 1 day
+    settings.r.expire "#{user}.repos", 60*60*24
     [repos, time]
   end
 
