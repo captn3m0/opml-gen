@@ -21,6 +21,17 @@
         <input type="submit" value="Get OPML!">
       </form>
       </article>
+
+      <article>
+
+      <h2>Stock/SEC Filings</h2>
+      <p>Give a comma separated list of stock tickers (valid in the US) and this will generate a OPML Feed containing RSS Feeds for all of these stock tickers</p>
+      <form method="post" action="/submit/sec">
+        <label for="stocks">Stock Tickers (or CIKs)</label>
+        <textarea name="stocks" placeholder="AMD,GOOG,APPL"></textarea>
+        <input type="submit" value="Get OPML!">
+      </form>
+      </article>
     </section>
     <!-- <section> -->
       <article>

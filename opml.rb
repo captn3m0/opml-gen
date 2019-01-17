@@ -33,7 +33,7 @@ class OPML
     end
   end
 
-  def xml
+  def xml(text)
     Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
       xml.opml(version: '2.0') do
         xml.head do
@@ -41,7 +41,7 @@ class OPML
         end
 
         xml.body do
-          xml.outline text: 'GitHub Releases' do
+          xml.outline text: text do
             @outlines.each do |outline|
               xml.outline outline
             end
