@@ -1,9 +1,12 @@
 FROM ruby:alpine
-MAINTAINER Nemo <opml.docker@captnemo.in>
+MAINTAINER Nemo <docker@captnemo.in>
 
 WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
-RUN apk add --no-cache build-base && bundle install && apk del build-base
+RUN apk add --no-cache build-base && \
+  gem install bundler && \
+  bundle install && \
+  apk del build-base
 COPY . /app
 
 EXPOSE 80
