@@ -30,7 +30,7 @@ class MyApp < Sinatra::Base
 
   def get_sec_opml(stocks = %w[AAPL GOOG])
     opml = OPML.new do
-      @title = "SEC Filings for #{stocks.join}"
+      @title = "SEC Filings for #{stocks.join(",")}"
       # TODO: Fix this
       @date_created = Time.now.rfc822
       @date_modified = Time.now.rfc822
