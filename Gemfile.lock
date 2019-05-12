@@ -19,7 +19,7 @@ GEM
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
-    redis (4.1.0)
+    redis (4.1.1)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
@@ -44,7 +44,7 @@ DEPENDENCIES
   dotenv (~> 2.4)
   nokogiri (~> 1.8)
   octokit (~> 4.0)
-  redis (~> 4.0)
+  redis (~> 4.1)
   sinatra (~> 2.0.2)
   sinatra-contrib (~> 2.0)
 
