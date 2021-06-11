@@ -25,7 +25,7 @@ GEM
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
-    redis (4.2.5)
+    redis (4.3.1)
     ruby2_keywords (0.0.4)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
@@ -50,7 +50,7 @@ DEPENDENCIES
   dotenv (~> 2.7)
   nokogiri (~> 1.11)
   octokit (~> 4.21)
-  redis (~> 4.2)
+  redis (~> 4.3)
   sinatra (~> 2.1.0)
   sinatra-contrib (~> 2.1)
 
