@@ -9,13 +9,13 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     faraday-net_http (1.0.1)
-    mini_portile2 (2.5.3)
+    mini_portile2 (2.6.1)
     multi_json (1.15.0)
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.11.4)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -48,7 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv (~> 2.7)
-  nokogiri (~> 1.11)
+  nokogiri (~> 1.12)
   octokit (~> 4.21)
   redis (~> 4.3)
   sinatra (~> 2.1.0)
