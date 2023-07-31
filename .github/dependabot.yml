@@ -4,9 +4,3 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "23:30"
-  open-pull-requests-limit: 99
-  ignore:
-  - dependency-name: octokit
-    versions:
-    - 4.20.0
