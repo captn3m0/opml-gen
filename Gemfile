@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'nokogiri', '~> 1.15'
-gem 'octokit', '~> 4.21'
+gem 'octokit', '~> 7.2'
 gem 'redis', '~> 5.0'
 gem 'sinatra', '~> 2.2.3'
 gem 'sinatra-contrib', '~> 2.2'
